@@ -21,6 +21,9 @@ const HomePage: React.FC = () => {
   const [popupEmail, setPopupEmail] = useState('');
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
     const timer = setTimeout(() => {
       setShowPopup(true);
     }, 5000);

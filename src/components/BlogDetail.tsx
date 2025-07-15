@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Clock, User, Calendar, Tag, X } from 'lucide-react';
 import BlogHeader from './BlogHeader';
@@ -40,7 +40,7 @@ const blogPosts: BlogPost[] = [
       
       <p>The future of WhatsApp communication is about having control over your data while maintaining the highest security standards. Join thousands of users who have already discovered the power of organized, accessible chat history.</p>
     `,
-    image: '/api/placeholder/800/400',
+    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
     author: 'Sarah Johnson',
     date: '2024-01-15',
     readTime: '8 min read',
@@ -71,7 +71,7 @@ const blogPosts: BlogPost[] = [
       <h2>Transparent Process</h2>
       <p>We believe in complete transparency. Our extraction process is open-source, allowing security experts to verify our privacy claims. You can trust that what we say about security is what we actually deliver.</p>
     `,
-    image: '/api/placeholder/800/400',
+    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
     author: 'Michael Chen',
     date: '2024-01-10',
     readTime: '6 min read',
@@ -111,7 +111,7 @@ const blogPosts: BlogPost[] = [
       
       <p>Transform your WhatsApp chaos into organized clarity. Start your journey to better data management today.</p>
     `,
-    image: '/api/placeholder/800/400',
+    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
     author: 'Emma Rodriguez',
     date: '2024-01-05',
     readTime: '7 min read',
@@ -127,6 +127,11 @@ const BlogDetail: React.FC = () => {
   const [email, setEmail] = useState('');
   
   const blog = blogPosts.find(post => post.id === id);
+
+  // Scroll to top when component mounts or id changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [id]);
 
   const handleJoinWaitlist = () => {
     setShowModal(true);
@@ -167,7 +172,7 @@ const BlogDetail: React.FC = () => {
 
       {/* Hero Image */}
       <div className="relative h-96 overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-r ${blog.gradient} opacity-90`} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#874EFF] to-[#C83FFF] opacity-90" />
         <img
           src={blog.image}
           alt={blog.title}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageSquare, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Twitter, Linkedin, Mail, Instagram } from 'lucide-react';
+import img from "../assets/logoff.svg";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -7,6 +8,7 @@ const Footer: React.FC = () => {
   const socialLinks = [
     { icon: Twitter, href: '#twitter', label: 'Twitter' },
     { icon: Linkedin, href: '#linkedin', label: 'LinkedIn' },
+    { icon: Instagram, href: '#instagram', label: 'Instagram' },
     { icon: Mail, href: '#email', label: 'Email' }
   ];
 
@@ -17,7 +19,7 @@ const Footer: React.FC = () => {
         {/* Row 1: Logo and Blurb */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <MessageSquare className="h-8 w-8 text-[#874EFF]" />
+            <img src={img} alt="icon" width={50}/>
             <span className="ml-2 text-2xl font-bold bg-gradient-to-r from-[#874EFF] to-[#C83FFF] bg-clip-text text-transparent">
               WhatsApp Extractor
             </span>

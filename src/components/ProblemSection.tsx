@@ -69,7 +69,7 @@ const ProblemSection: React.FC<ProblemSectionProps> = ({ scrollToSection }) => {
         {/* Problems Grid */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column - Visualizations */}
-          <div className="space-y-8">
+          <div className="hidden lg:block space-y-8">
             {problems.map((problem, index) => (
               <div
                 key={index}

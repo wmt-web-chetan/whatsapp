@@ -1,7 +1,7 @@
 import React from 'react';
 import { Check, Users, Brain, MessageCircle, Repeat, RefreshCw } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-
+import firtFeature from "../assets/FirstFeature.png"
 const FeaturesSection: React.FC = () => {
   const [featuresRef, featuresInView] = useIntersectionObserver();
 
@@ -10,7 +10,7 @@ const FeaturesSection: React.FC = () => {
       icon: Users,
       title: "Multi-Group Chat Extraction",
       description: "Select multiple WhatsApp groups or individual profiles at once and extract chats for a specific date range.",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: firtFeature,
       color: "from-[#874EFF] to-[#C83FFF]",
       reverse: false
     },
@@ -34,7 +34,7 @@ const FeaturesSection: React.FC = () => {
       icon: Repeat,
       title: "Reusable Custom Prompts",
       description: "Save your recurring queries and run them with a single click to get daily insights without retyping.",
-      image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
       color: "from-[#874EFF] to-[#C83FFF]",
       reverse: true
     },

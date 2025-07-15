@@ -15,36 +15,36 @@ const PrivacySecuritySection: React.FC<PrivacySecuritySectionProps> = ({ scrollT
       title: "Zero Data Retention",
       description: "We do not store, save, or log any of your WhatsApp chats or personal messages. All processing is done on-demand, and your conversation data is discarded the moment you close the extension.",
       image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
-      color: "from-red-500 to-red-600",
-      badgeColor: "bg-red-500",
-      glowColor: "hover:shadow-red-500/20"
+      color: "from-[#874EFF] to-[#C83FFF]",
+      badgeColor: "bg-[#874EFF]",
+      glowColor: "hover:shadow-[#874EFF]/20"
     },
     {
       icon: Cpu,
       title: "Local Processing",
       description: "The extension works within your browser on your computer. Your chats are processed locally and are never uploaded or exposed to our servers.",
       image: "https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=800",
-      color: "from-blue-500 to-blue-600",
-      badgeColor: "bg-blue-500",
-      glowColor: "hover:shadow-blue-500/20"
+      color: "from-[#874EFF] to-[#C83FFF]",
+      badgeColor: "bg-[#874EFF]",
+      glowColor: "hover:shadow-[#874EFF]/20"
     },
     {
       icon: Eye,
       title: "Complete Confidentiality",
       description: "Your conversations are never shared, sold, or analyzed by third parties. Your privacy is absolute and non-negotiable.",
       image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800",
-      color: "from-purple-500 to-purple-600",
-      badgeColor: "bg-purple-500",
-      glowColor: "hover:shadow-purple-500/20"
+      color: "from-[#874EFF] to-[#C83FFF]",
+      badgeColor: "bg-[#874EFF]",
+      glowColor: "hover:shadow-[#874EFF]/20"
     },
     {
       icon: Lock,
       title: "Secure & Encrypted",
       description: "All interactions with our tool are fully encrypted to protect your account information and ensure your activity remains secure from unauthorized access.",
       image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800",
-      color: "from-green-500 to-green-600",
-      badgeColor: "bg-green-500",
-      glowColor: "hover:shadow-green-500/20"
+      color: "from-[#874EFF] to-[#C83FFF]",
+      badgeColor: "bg-[#874EFF]",
+      glowColor: "hover:shadow-[#874EFF]/20"
     }
   ];
 
@@ -130,7 +130,7 @@ const PrivacySecuritySection: React.FC<PrivacySecuritySectionProps> = ({ scrollT
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             <div className="relative">
-              <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-cyan-400 transition-colors duration-300">
+              <h3 className="text-2xl font-bold text-white mb-6  transition-colors duration-300">
                 You can use WhatsApp Extractor with complete confidence.
               </h3>
               <button 

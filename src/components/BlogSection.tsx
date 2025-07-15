@@ -45,6 +45,7 @@ const BlogSection: React.FC = () => {
 
   const handleBlogClick = (id: string) => {
     navigate(`/blog/${id}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -72,7 +73,7 @@ const BlogSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {blogPosts.map((post, index) => (
             <article
               key={post.id}
@@ -87,7 +88,7 @@ const BlogSection: React.FC = () => {
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-48 sm:h-56 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-gradient-to-r from-[#874EFF] to-[#C83FFF] text-white px-3 py-1 rounded-full text-xs font-semibold">
@@ -98,24 +99,24 @@ const BlogSection: React.FC = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#874EFF] transition-colors line-clamp-2">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-[#874EFF] transition-colors line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-sm sm:text-base text-gray-600 mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
 
                 {/* Meta */}
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm text-gray-500 mb-4 gap-2 sm:gap-4">
+                  <div className="flex items-center gap-3 sm:gap-4">
                     <div className="flex items-center gap-1">
-                      <User className="h-4 w-4" />
-                      <span>{post.author}</span>
+                      <User className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <span className="truncate">{post.author}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
-                      <span>{post.date}</span>
+                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <span className="truncate">{post.date}</span>
                     </div>
                   </div>
                   <span className="font-medium">{post.readTime}</span>

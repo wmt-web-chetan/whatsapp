@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import img from "../assets/logoff.svg";
 
@@ -10,22 +9,24 @@ interface BlogHeaderProps {
 const BlogHeader: React.FC<BlogHeaderProps> = ({ onJoinWaitlist }) => {
   const navigate = useNavigate();
 
+  const handleHomeClick = () => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <button
-              onClick={() => navigate('/')}
-              className="mr-4 p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
-            >
-              <ArrowLeft className="h-5 w-5" />
-            </button>
+          <button
+            onClick={handleHomeClick}
+            className="flex items-center hover:opacity-80 transition-opacity"
+          >
             <img src={img} alt="icon" width={50}/>
             <span className="ml-2 text-xl font-bold bg-gradient-to-r from-[#874EFF] to-[#C83FFF] bg-clip-text text-transparent">
               WhatsApp Extractor
             </span>
-          </div>
+          </button>
           
           <div className="flex items-center">
             <button

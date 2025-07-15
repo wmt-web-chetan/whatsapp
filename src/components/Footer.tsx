@@ -1,0 +1,58 @@
+import React from 'react';
+import { MessageSquare, Twitter, Linkedin, Mail } from 'lucide-react';
+
+const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    { icon: Twitter, href: '#twitter', label: 'Twitter' },
+    { icon: Linkedin, href: '#linkedin', label: 'LinkedIn' },
+    { icon: Mail, href: '#email', label: 'Email' }
+  ];
+
+  return (
+    <footer className="bg-gray-900 text-white">
+      {/* Main Footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Row 1: Logo and Blurb */}
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center mb-4">
+            <MessageSquare className="h-8 w-8 text-[#874EFF]" />
+            <span className="ml-2 text-2xl font-bold bg-gradient-to-r from-[#874EFF] to-[#C83FFF] bg-clip-text text-transparent">
+              WhatsApp Extractor
+            </span>
+          </div>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            AI-powered insights for your WhatsApp Web. Summarize, query, and automate.
+          </p>
+        </div>
+
+        {/* Row 2: Social Media Icons */}
+        <div className="flex justify-center space-x-6 mb-8">
+          {socialLinks.map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              aria-label={social.label}
+              className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-[#874EFF] hover:to-[#C83FFF] transition-all duration-300 transform hover:scale-110"
+            >
+              <social.icon className="h-5 w-5" />
+            </a>
+          ))}
+        </div>
+
+        {/* Row 3: Copyright and Disclaimer */}
+        <div className="text-center space-y-4">
+          <div className="text-gray-400">
+            © {currentYear} WhatsApp Extractor. All Rights Reserved.
+          </div>
+          <div className="text-sm text-gray-500 max-w-4xl mx-auto leading-relaxed">
+            <strong>Disclaimer:</strong> WhatsApp Extractor is an independent product and is not affiliated with, sponsored by, or endorsed by WhatsApp.
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

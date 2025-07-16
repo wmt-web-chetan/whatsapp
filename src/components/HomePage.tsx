@@ -53,14 +53,15 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white   ">
       <Navigation 
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         scrollToSection={scrollToSection}
       />
-      
+      <div className="overflow-x-hidden">
       <HeroSection scrollToSection={scrollToSection} />
+      
       <VideoSection />
       <ProblemSection scrollToSection={scrollToSection} />
       <SolutionSection scrollToSection={scrollToSection} />
@@ -70,7 +71,10 @@ const HomePage: React.FC = () => {
       <BetaTestimonialsSection scrollToSection={scrollToSection} />
       <PricingSection onJoinWaitlist={handleJoinWaitlist} />
       <BlogSection />
+      
       <Footer />
+
+      </div>
 
       {/* Popup */}
       {showPopup && (

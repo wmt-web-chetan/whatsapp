@@ -34,7 +34,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
   }, [currentText, isDeleting, currentWordIndex, words]);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#874EFF]/10 to-[#C83FFF]/10 py-20 sm:py-32">
+    <section className="relative overflow-x-hidden bg-gradient-to-br from-[#874EFF]/10 to-[#C83FFF]/10 py-20 sm:py-32">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Floating Chat Icons */}
@@ -80,12 +80,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6 animate-fade-in">
-            Turn WhatsApp Chaos into{' '}
-            <span className="bg-gradient-to-r from-[#874EFF] to-[#C83FFF] bg-clip-text text-transparent relative">
+            Turn WhatsApp Chaos into
+          </h1>
+          <div className="text-3xl sm:text-6xl md:text-5xl lg:text-6xl font-bold mb-6   flex items-center justify-center px-4">
+            <span className="bg-gradient-to-r from-[#874EFF] to-[#C83FFF] bg-clip-text text-transparent text-center break-words max-w-full">
               {currentText}
               <span className="animate-pulse">|</span>
             </span>
-          </h1>
+          </div>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Drowning in unread messages? WhatsApp Extractor is a powerful Chrome Extension that uses AI to instantly summarize chats from multiple groups, answer your questions, and automate your daily information gathering on WhatsApp Web. Stop scrolling and start understanding.
           </p>

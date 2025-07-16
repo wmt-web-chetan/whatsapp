@@ -80,9 +80,10 @@ const PricingSection: React.FC<PricingSectionProps> = ({ onJoinWaitlist }) => {
               />
               <button
                 onClick={onJoinWaitlist}
-                className="w-full bg-gradient-to-r from-[#874EFF] to-[#C83FFF] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                className="w-full bg-gradient-to-r from-[#874EFF] to-[#C83FFF] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               >
-                🎁 Claim My Free Subscription Now
+                <span className="hidden sm:inline">🎁 Claim My Free Subscription Now</span>
+                <span className="sm:hidden">🎁 Claim Free Access</span>
               </button>
             </div>
             <p className="text-sm text-gray-500 mt-4 text-center">
@@ -105,8 +106,8 @@ const PricingSection: React.FC<PricingSectionProps> = ({ onJoinWaitlist }) => {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-[#874EFF] to-[#C83FFF] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
-                      <Star className="h-4 w-4" />
+                    <div className="bg-gradient-to-r from-[#874EFF] to-[#C83FFF] text-white px-6 sm:px-8 py-2 sm:py-2 rounded-full text-sm sm:text-sm font-semibold flex items-center gap-2 sm:gap-2 whitespace-nowrap">
+                      <Star className="h-4 w-4 sm:h-4 sm:w-4" />
                       Free Lifetime Access
                     </div>
                   </div>
@@ -120,8 +121,8 @@ const PricingSection: React.FC<PricingSectionProps> = ({ onJoinWaitlist }) => {
                 <div className="space-y-4">
                   {plan.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-3">
-                      <div className={`bg-gradient-to-r ${plan.gradient} w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0`}>
-                        <feature.icon className="h-4 w-4 text-white" />
+                      <div className={`bg-gradient-to-r ${plan.name === 'Free' ? 'from-[#874EFF]/10 to-[#C83FFF]/10' : plan.gradient} w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0`}>
+                        <feature.icon className={`h-4 w-4 ${plan.name === 'Free' ? 'text-[#874EFF]' : 'text-white'}`} />
                       </div>
                       <span className="text-gray-700 font-medium">{feature.text}</span>
                     </div>

@@ -171,7 +171,7 @@ const BlogDetail: React.FC = () => {
       <BlogHeader onJoinWaitlist={handleJoinWaitlist} />
 
       {/* Hero Image */}
-      <div className="relative h-96 overflow-hidden">
+      <div className="relative h-96 overflow-hidden  sm:mt-0">
         <div className="absolute inset-0 bg-gradient-to-r from-[#874EFF] to-[#C83FFF] opacity-90" />
         <img
           src={blog.image}
@@ -181,7 +181,7 @@ const BlogDetail: React.FC = () => {
         <div className="absolute inset-0 bg-black bg-opacity-30" />
         
         {/* Blog Title Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-8">
+        <div className="absolute bottom-0 left-0 right-0 p-8 ">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm font-medium mb-4">
               <Tag className="h-4 w-4 mr-1" />
@@ -198,33 +198,65 @@ const BlogDetail: React.FC = () => {
       </div>
 
       {/* Article Content */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        {/* Meta Information */}
-        <div className="flex flex-wrap items-center gap-6 mb-8 text-gray-600">
-          <div className="flex items-center">
-            <User className="h-5 w-5 mr-2" />
-            <span>{blog.author}</span>
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="flex gap-8">
+          {/* Sidebar */}
+          <div className="hidden lg:block w-64 flex-shrink-0">
+            <div className="bg-white rounded-2xl shadow-lg p-6" style={{ position: 'sticky', top: '120px' }}>
+              <h3 className="font-bold text-gray-900 mb-6">Article Details</h3>
+              
+              {/* Meta Information in Sidebar */}
+              <div className="space-y-4 text-sm text-gray-600">
+                <div className="flex items-center">
+                  <User className="h-4 w-4 mr-2" />
+                  <span>{blog.author}</span>
+                </div>
+                <div className="flex items-center">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span>{new Date(blog.date).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}</span>
+                </div>
+                <div className="flex items-center">
+                  <Clock className="h-4 w-4 mr-2" />
+                  <span>{blog.readTime}</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center">
-            <Calendar className="h-5 w-5 mr-2" />
-            <span>{new Date(blog.date).toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
-            })}</span>
-          </div>
-          <div className="flex items-center">
-            <Clock className="h-5 w-5 mr-2" />
-            <span>{blog.readTime}</span>
-          </div>
-        </div>
 
-        {/* Article Content */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-          <div 
-            className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-ul:text-gray-700 prose-li:mb-2"
-            dangerouslySetInnerHTML={{ __html: blog.content }}
-          />
+          {/* Main Content */}
+          <div className="flex-1">
+            {/* Mobile Meta Information */}
+            <div className="lg:hidden flex flex-wrap items-center gap-6 mb-8 text-gray-600 pt-4">
+              <div className="flex items-center">
+                <User className="h-5 w-5 mr-2" />
+                <span>{blog.author}</span>
+              </div>
+              <div className="flex items-center">
+                <Calendar className="h-5 w-5 mr-2" />
+                <span>{new Date(blog.date).toLocaleDateString('en-US', { 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric' 
+                })}</span>
+              </div>
+              <div className="flex items-center">
+                <Clock className="h-5 w-5 mr-2" />
+                <span>{blog.readTime}</span>
+              </div>
+            </div>
+
+            {/* Article Content */}
+            <div className="bg-white rounded-2xl shadow-lg p-6 md:p-12">
+              <div 
+                className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-ul:text-gray-700 prose-li:mb-2 prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-8 prose-h2:mb-4"
+                dangerouslySetInnerHTML={{ __html: blog.content }}
+              />
+            </div>
+          </div>
         </div>
 
         {/* Call to Action */}

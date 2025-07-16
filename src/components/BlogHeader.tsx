@@ -22,13 +22,13 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({ onJoinWaitlist }) => {
             onClick={handleHomeClick}
             className="flex items-center hover:opacity-80 transition-opacity"
           >
-            <img src={img} alt="icon" width={50}/>
+            <img src={img} alt="icon" className="w-[40px] md:w-[40px]"/>
             <span className="ml-2 text-xl font-bold bg-gradient-to-r from-[#874EFF] to-[#C83FFF] bg-clip-text text-transparent">
               WhatsApp Extractor
             </span>
           </button>
           
-          <div className="flex items-center">
+          <div className="hidden sm:flex items-center">
             <button
               onClick={onJoinWaitlist}
               className="bg-gradient-to-r from-[#874EFF] to-[#C83FFF] text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300"

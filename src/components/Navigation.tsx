@@ -17,7 +17,7 @@ const Navigation: React.FC<NavigationProps> = ({ isMenuOpen, setIsMenuOpen, scro
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center hover:opacity-80 transition-opacity"
           >
-            <img src={img} alt="icon" width={50}/>
+            <img src={img} alt="icon" className="w-[40px] md:w-[40px]  "/>
             <span className="ml-2 text-xl font-bold bg-gradient-to-r from-[#874EFF] to-[#C83FFF] bg-clip-text text-transparent">
               WhatsApp Extractor
             </span>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Play } from 'lucide-react';
 
 const VideoSection: React.FC = () => {
   return (
@@ -15,14 +14,41 @@ const VideoSection: React.FC = () => {
         </div>
         
         <div className="max-w-6xl mx-auto">
-          <div className="relative bg-gradient-to-br from-[#874EFF] to-[#C83FFF] rounded-3xl p-2 shadow-2xl">
-            <div className="bg-black rounded-2xl aspect-video flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#874EFF]/20 to-[#C83FFF]/20"></div>
-              <button className="relative z-10 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full p-6 hover:bg-white/30 transition-all duration-300 group">
-                <Play className="h-12 w-12 text-white ml-1 group-hover:scale-110 transition-transform" />
-              </button>
-              <div className="absolute bottom-4 left-4 text-white/80 text-sm">
-                🎬 Demo Video Coming Soon
+          <div className="relative rounded-3xl p-1 shadow-2xl">
+            {/* Animated gradient border layers */}
+            <div className="absolute inset-0 rounded-3xl animate-gradient-rotate p-1"></div>
+            <div className="absolute inset-0 rounded-3xl animate-gradient-spin opacity-60 p-1"></div>
+            <div className="absolute inset-0 rounded-3xl animate-gradient-pulse opacity-40 p-1"></div>
+            
+            {/* Inner border container */}
+            <div className="relative bg-gradient-to-br from-[#874EFF] to-[#C83FFF] rounded-3xl p-2 z-10">
+              <div className="bg-black rounded-2xl aspect-video relative overflow-hidden">
+              <video
+                className="w-full h-full object-cover rounded-2xl"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls={false}
+              >
+                <source src="/api/placeholder/video/demo.mp4" type="video/mp4" />
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                {/* Fallback content */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#874EFF]/20 to-[#C83FFF]/20 flex items-center justify-center">
+                  <div className="text-white/80 text-center">
+                    <p className="text-lg mb-2">🎬 Video Demo</p>
+                    <p className="text-sm">Your browser doesn't support video playback</p>
+                  </div>
+                </div>
+              </video>
+              
+              {/* Overlay for branding */}
+              <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2">
+                <p className="text-white/90 text-sm font-medium">WhatsApp Extractor Demo</p>
+              </div>
+              
+              {/* Gradient overlay for better text visibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
               </div>
             </div>
           </div>

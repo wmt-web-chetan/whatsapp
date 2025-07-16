@@ -135,7 +135,7 @@ const BlogSection: React.FC = () => {
         {/* View All Posts */}
         <div className={`text-center mt-16 transition-all duration-1000 ${blogInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '400ms' }}>
           <button 
-            onClick={() => console.log('Navigate to all blog posts')}
+            onClick={() => navigate('/blog')}
             className="bg-gradient-to-r from-[#874EFF] to-[#C83FFF] text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           >
             View All Posts

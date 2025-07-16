@@ -86,7 +86,7 @@ const FeaturesSection: React.FC = () => {
                   <div className="bg-gradient-to-r from-[#874EFF] to-[#C83FFF] w-12 h-12 rounded-xl flex items-center justify-center">
                     <feature.icon className="h-6 w-6 text-white" />
                   </div>
-                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                  <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
                     <Check className="h-4 w-4" />
                     Feature
                   </div>
@@ -106,8 +106,9 @@ const FeaturesSection: React.FC = () => {
                       alt={feature.title}
                       className="w-full h-80 object-cover rounded-2xl"
                     />
-                    <div className="absolute top-8 left-8 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
-                      <span className="text-sm font-semibold text-gray-800">✨ AI Powered</span>
+                    <div className="absolute top-8 left-8 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                      <span className="text-sm font-semibold text-gray-800 animate-pulse">✨ AI Powered</span>
+                      {/* <div className="absolute inset-0 bg-gradient-to-r from-[#874EFF] to-[#C83FFF] opacity-20 rounded-full animate-ping"></div> */}
                     </div>
                   </div>
                 </div>

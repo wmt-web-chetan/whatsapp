@@ -12,7 +12,6 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ scrollToSection }
   const steps = [
     {
       icon: Download,
-      number: "01",
       title: "Install the Chrome Extension",
       description: "Head to the Chrome Web Store and add the WhatsApp Extractor extension to your browser in one click.",
       emoji: "🚀",
@@ -21,7 +20,6 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ scrollToSection }
     },
     {
       icon: MessageSquare,
-      number: "02", 
       title: "Open WhatsApp Web & Sign Up",
       description: "Open WhatsApp Web as you normally would. The extractor will appear, allowing you to create a secure account with just your email.",
       emoji: "💬",
@@ -30,7 +28,6 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ scrollToSection }
     },
     {
       icon: Zap,
-      number: "03",
       title: "Extract, Summarize & Query!",
       description: "You're all set! Select your groups, click \"Sync,\" and let our AI provide you with summaries, answer your questions, and run your custom prompts.",
       emoji: "⚡",
@@ -98,10 +95,6 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ scrollToSection }
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                {/* Step Number */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
-                  {step.number}
-                </div>
 
                 {/* Icon */}
                 <div className={`bg-gradient-to-r ${step.color} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
